@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-main: #f8f9fa;
+  --surface: #ffffff;
+  --border: #dadce0;
+  --text-main: #202124;
+  --text-muted: #5f6368;
+  --hover-bg: #f1f3f4;
+  --search-bg: #f1f3f4;
+}
+
+body.dark {
+  --bg-main: #202124;
+  --surface: #2d2e30;
+  --border: #5f6368;
+  --text-main: #e8eaed;
+  --text-muted: #bdc1c6;
+  --hover-bg: #3c4043;
+  --search-bg: #3c4043;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.layout {
+  display: flex;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.content {
+  flex: 1;
+  padding: 0 1rem;
+  min-width: 0;
+}
+
+.icon-btn {
+  border: none;
+  background: transparent;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.icon-btn:hover {
+  background: var(--hover-bg);
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+@media (max-width: 640px) {
+  .content {
+    padding: 0 0.7rem;
+  }
+}
