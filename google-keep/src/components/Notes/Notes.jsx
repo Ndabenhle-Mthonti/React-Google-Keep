@@ -1,7 +1,7 @@
 import "./Notes.css";
 import Note from "./Note.jsx";
 
-const Notes = ({ notes, isGridView, onDelete, onTogglePin }) => {
+const Notes = ({ notes, isGridView, onDelete, onTogglePin, onUpdateNote }) => {
   return (
     // Switch between masonry grid and single-column list view.
     <section className={`notes ${isGridView ? "grid-mode" : "list-mode"}`}>
@@ -14,6 +14,7 @@ const Notes = ({ notes, isGridView, onDelete, onTogglePin }) => {
             note={note}
             onDelete={onDelete}
             onTogglePin={onTogglePin}
+            onUpdate={onUpdateNote}
           />
         ))
       )}

@@ -64,6 +64,12 @@ function App() {
     );
   };
 
+  const updateNote = (id, updates) => {
+    setNotes((prevNotes) =>
+      prevNotes.map((note) => (note.id === id ? { ...note, ...updates } : note))
+    );
+  };
+
   // Filter by search text, then keep pinned notes at the top.
   const filteredNotes = useMemo(() => {
     const term = searchTerm.trim().toLowerCase();
@@ -98,6 +104,7 @@ function App() {
             isGridView={isGridView}
             onDelete={deleteNote}
             onTogglePin={togglePin}
+            onUpdateNote={updateNote}
           />
         </main>
       </div>

@@ -23,6 +23,7 @@
   border-radius: 8px;
   position: relative;
   color: #202124;
+  cursor: pointer;
 }
 
 .note .title {
@@ -79,6 +80,9 @@
 }
 
 .empty-state {
+  display: block;
+  width: 100%;
+  column-span: all;
   text-align: center;
   color: var(--text-muted);
   margin-top: 3rem;
