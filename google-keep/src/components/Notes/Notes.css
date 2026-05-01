@@ -33,7 +33,7 @@
 }
 
 .note .text {
-  margin-bottom: 0.9rem;
+  margin-bottom: 0.35rem;
   white-space: pre-wrap;
   word-break: break-word;
   font-size: 0.95rem;
@@ -42,6 +42,18 @@
 .note .note-footer {
   display: flex;
   justify-content: flex-end;
+  gap: 0.25rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4px);
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s ease;
+}
+
+.note:hover .note-footer,
+.note:focus-within .note-footer {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .pin-btn,
@@ -62,10 +74,8 @@
   background: rgba(95, 99, 104, 0.12);
 }
 
-.pin-btn {
-  position: absolute;
-  right: 0.5rem;
-  top: 0.5rem;
+.pin-btn .material-symbols-outlined {
+  font-size: 20px;
 }
 
 .empty-state {

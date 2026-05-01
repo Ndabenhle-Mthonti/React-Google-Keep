@@ -6,21 +6,20 @@ const Note = ({ note, onDelete, onTogglePin }) => {
 
   return (
     <article className="note" style={noteStyle}>
-      <button
-        type="button"
-        className="pin-btn"
-        onClick={() => onTogglePin(note.id)}
-        aria-label="Pin note"
-      >
-        <span className="material-symbols-outlined">
-          {note.pinned ? "keep" : "push_pin"}
-        </span>
-      </button>
-
       {note.title && <h3 className="title">{note.title}</h3>}
       {note.text && <p className="text">{note.text}</p>}
 
       <div className="note-footer">
+        <button
+          type="button"
+          className="pin-btn"
+          onClick={() => onTogglePin(note.id)}
+          aria-label={note.pinned ? "Unpin note" : "Pin note"}
+        >
+          <span className="material-symbols-outlined">
+            {note.pinned ? "keep" : "push_pin"}
+          </span>
+        </button>
         <button
           type="button"
           className="delete-btn"
